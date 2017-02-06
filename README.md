@@ -12,6 +12,8 @@ All assignments for Web App From Scratch
 ### Nadelen:
 - Nadeel 1
 - Nadeel 2
+- Nadeel 3
+- Nadeel 4
 
 ## Voor- en nadelen single page web app onderzoeken
 

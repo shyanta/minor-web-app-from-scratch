@@ -6,6 +6,8 @@ All assignments for Web App From Scratch
 ### Voordelen:
 - Voordeel 1
 - Voordeel 2
+- Voordeel 3
+- Voordeel 4
 
 ### Nadelen:
 - Nadeel 1

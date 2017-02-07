@@ -1,36 +1,36 @@
 # minor-wafs
 All assignments for Web App From Scratch
 
-## Voor- en nadelen JavaScript libraries/frameworks onderzoeken
+## Advantage and Disadvantages JavaScript libraries/frameworks research
 
-### Voordelen:
-- Het kan gebruikt worden om gemakkelijker te coden.
-- Veel meer solide.
-- Korte en minder code.
-- Tijd besparend.
-- Kan beter leesbaar worden, doordat het korter word.
+### Advantage:
+- Easier to code.
+- More solid.
+- Shorter and Less code.
+- Time saving.
+- Better readable, bacause it's shorter.
 
-### Nadelen:
-- Onnodige delen js inladen, je gebruikt vaak maar een paar onderdelen van de libary of het framework.
-- Maakt je applicatie langzamer.
-- Je snapt de libary of het framework maar niet de onderliggende code.
-- Het is niet je 'eigen' code.
+### Disadvantages:
+- Loaded not needed JS, you only use a small part of the libary or framework.
+- Makes your application slower.
+- You know how the libary or framework works but do not know the underlying code.
+- In the end it's not your own code.
 
-## Voor- en nadelen single page web app onderzoeken
+## Advantage and Disadvantages single page web app research
 
-### Voordelen:
-- Simplere structuur dan reguliere websites.
-- Geen page reloads.
-- Geen aparte pagina's.
+### Advantage:
+- More simple strcuture than regular websites.
+- No page reloads needed.
+- No separate pages.
 - Mobile friendly.
 
-### Nadelen:
-- Laden is vaak iets langzamer.
-- Niet altijd SEO vriendelijk, omdat het geen aparte pagina's zijn.
-- Delen op bijv. Facebook is lastig omdat die een pagina pakt en niet een deel van een pagina.
-- Minder 'ruimte' binnen de website.
-- Niet handig voor content gedreven websites.
-- Scroll kan hinderlijk zijn (al is dat tegenwoordig steeds minder het geval).
+### Disadvantages:
+- Slower loading of application.
+- Most of the time not SEO friendly.
+- Sharing content from for example Facebook is not so easy anymore, because there are not separate pages.
+- Less space to work within the website.
+- Not handy for content driven websites.
+- Scroll can be annoying but most of the time it's accepted.
 
 ## Sources
 - https://www.giftofspeed.com/dont-use-javascript-libraries/

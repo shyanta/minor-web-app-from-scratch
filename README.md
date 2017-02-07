@@ -4,16 +4,17 @@ All assignments for Web App From Scratch
 ## Voor- en nadelen JavaScript libraries/frameworks onderzoeken
 
 ### Voordelen:
-- Voordeel 1
-- Voordeel 2
-- Voordeel 3
-- Voordeel 4
+- Het kan gebruikt worden om gemakkelijker te coden.
+- Veel meer solide.
+- Korte en minder code.
+- Tijd besparend.
+- Kan beter leesbaar worden, doordat het korter word.
 
 ### Nadelen:
-- Nadeel 1
-- Nadeel 2
-- Nadeel 3
-- Nadeel 4
+- Onnodige delen js inladen, je gebruikt vaak maar een paar onderdelen van de libary of het framework.
+- Maakt je applicatie langzamer.
+- Je snapt de libary of het framework maar niet de onderliggende code.
+- Het is niet je 'eigen' code.
 
 ## Voor- en nadelen single page web app onderzoeken
 
@@ -28,5 +29,5 @@ All assignments for Web App From Scratch
 - Nadeel 2
 
 ## Sources
-- Source
-- Source
+- https://www.giftofspeed.com/dont-use-javascript-libraries/
+- https://davidwalsh.name/6-reasons-to-use-javascript-libraries-frameworks

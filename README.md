@@ -26,3 +26,7 @@ All assignments for Web App From Scratch
 ### Nadelen:
 - Nadeel 1
 - Nadeel 2
+
+## Sources
+- Source
+- Source

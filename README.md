@@ -19,15 +19,20 @@ All assignments for Web App From Scratch
 ## Voor- en nadelen single page web app onderzoeken
 
 ### Voordelen:
-- Voordeel 1
-- Voordeel 2
-- Voordeel 3
-- Voordeel 4
+- Simplere structuur dan reguliere websites.
+- Geen page reloads.
+- Geen aparte pagina's.
+- Mobile friendly.
 
 ### Nadelen:
-- Nadeel 1
-- Nadeel 2
+- Laden is vaak iets langzamer.
+- Niet altijd SEO vriendelijk, omdat het geen aparte pagina's zijn.
+- Delen op bijv. Facebook is lastig omdat die een pagina pakt en niet een deel van een pagina.
+- Minder 'ruimte' binnen de website.
+- Niet handig voor content gedreven websites.
+- Scroll kan hinderlijk zijn (al is dat tegenwoordig steeds minder het geval).
 
 ## Sources
 - https://www.giftofspeed.com/dont-use-javascript-libraries/
 - https://davidwalsh.name/6-reasons-to-use-javascript-libraries-frameworks
+- http://acodez.in/single-page-website/

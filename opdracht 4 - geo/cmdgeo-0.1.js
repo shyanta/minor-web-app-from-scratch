@@ -13,7 +13,7 @@
 // var SANDBOX = "SANDBOX";
 // Gebruik: ET.addListener('foo', handleEvent); ET.fire('event_name'); ET.removeListener('foo', handleEvent);
 
-var currentPosition = currentPositionMarker = customDebugging = debugId = map = interval =intervalCounter = updateMap = false;
+var currentPosition = currentPositionMarker = customDebugging = debugId = map = interval = intervalCounter = updateMap = false;
 
 // Event functies - bron: http://www.nczonline.net/blog/2010/03/09/custom-events-in-javascript/ Copyright (c) 2010 Nicholas C. Zakas. All rights reserved. MIT License
 
@@ -52,20 +52,20 @@ var ET = new EventTarget();
 
 // Test of GPS beschikbaar is (via geo.js) en vuur een event af
 function init(){
-    var GPS_AVAILABLE = 'GPS_AVAILABLE';
-    var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE';
+    var GPS_AVAILABLE = "GPS_AVAILABLE";
+    var GPS_UNAVAILABLE = "GPS_UNAVAILABLE";
 
     debug_message("Controleer of GPS beschikbaar is...");
 
     ET.addListener(GPS_AVAILABLE, _start_interval);
-    ET.addListener(GPS_UNAVAILABLE, function(){debug_message('GPS is niet beschikbaar.')});
+    ET.addListener(GPS_UNAVAILABLE, function(){debug_message("GPS is niet beschikbaar.")});
 
     (geo_position_js.init())?ET.fire(GPS_AVAILABLE):ET.fire(GPS_UNAVAILABLE);
 }
 
 // Start een interval welke op basis van REFRESH_RATE de positie updated
 function _start_interval(event){
-    var POSITION_UPDATED = 'POSITION_UPDATED';
+    var POSITION_UPDATED = "POSITION_UPDATED";
     var REFRESH_RATE = 1000;
 
     debug_message("GPS is beschikbaar, vraag positie.");
@@ -107,7 +107,7 @@ function _check_locations(event){
                     debug_message("Localstorage kan niet aangesproken worden: "+error);
                 }
 
-// TODO: Animeer de betreffende marker
+// Animeer de betreffende marker
 
                 window.location = locaties[i][1];
                 debug_message("Speler is binnen een straal van "+ locaties[i][2] +" meter van "+locaties[i][0]);
@@ -138,7 +138,7 @@ function _calculate_distance(p1, p2){
  *      kaart in ge-rendered moet worden, <div> of <canvas>
  */
 function generate_map(myOptions, canvasId){
-// TODO: Kan ik hier asynchroon nog de google maps api aanroepen? dit scheelt calls
+// Kan ik hier asynchroon nog de google maps api aanroepen? dit scheelt calls
 
     var LINEAIR = "LINEAIR";
     var locatieRij = markerRij = [];
@@ -178,7 +178,7 @@ function generate_map(myOptions, canvasId){
             title: locaties[i][0]
         });
     }
-// TODO: Kleur aanpassen op het huidige punt van de tour
+// Kleur aanpassen op het huidige punt van de tour
     if(tourType == LINEAIR){
         // Trek lijnen tussen de punten
         debug_message("Route intekenen");
@@ -186,8 +186,8 @@ function generate_map(myOptions, canvasId){
             clickable: false,
             map: map,
             path: routeList,
-            strokeColor: 'Black',
-            strokeOpacity: .6,
+            strokeColor: "Black",
+            strokeOpacity: 0.6,
             strokeWeight: 3
         });
 
@@ -198,7 +198,7 @@ function generate_map(myOptions, canvasId){
         position: kaartOpties.center,
         map: map,
         icon: positieMarker,
-        title: 'U bevindt zich hier'
+        title: "U bevindt zich hier"
     });
 
     // Zorg dat de kaart geupdated wordt als het POSITION_UPDATED event afgevuurd wordt
@@ -220,7 +220,7 @@ function update_positie(event){
 // FUNCTIES VOOR DEBUGGING
 
 function _geo_error_handler(code, message) {
-    debug_message('geo.js error '+code+': '+message);
+    debug_message("geo.js error "+code+": "+message);
 }
 function debug_message(message){
     (customDebugging && debugId)?document.getElementById(debugId).innerHTML:console.log(message);

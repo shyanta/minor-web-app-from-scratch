@@ -1,0 +1,11 @@
+/*
+Zorg er met CSS voor dat de secties netjes responsive gestyled zijn, ga hierbij uit van een single column first (mobile first) strategie
+ */
+
+main section {
+    display: none;
+}
+
+.active {
+    display: block;
+}

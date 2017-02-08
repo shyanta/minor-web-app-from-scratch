@@ -18,7 +18,6 @@
                 var defaultHash = "#startScreen";
                 oldHash = defaultHash;
                 newHash = defaultHash;
-                sections.toggle(newHash, oldHash);
             }
             // default section toggle
             sections.toggle(newHash, oldHash);

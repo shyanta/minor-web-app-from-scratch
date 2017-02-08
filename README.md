@@ -1,6 +1,9 @@
 # minor-web-app-from-scratch
 All assignments for Web App From Scratch
 
+## Assignments:
+- https://timoverkroost.github.io/minor-web-app-from-scratch/opdracht-5-spa/
+
 ## Advantage and Disadvantages JavaScript libraries/frameworks research
 
 ### Advantage:

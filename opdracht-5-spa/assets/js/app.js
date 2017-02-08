@@ -53,3 +53,9 @@
     // Run app
     app.init();
 }());
+
+/*
+Sources:
+- https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
+- Colin Dorr (build it togheter with him).
+ */

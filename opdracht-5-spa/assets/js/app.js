@@ -13,6 +13,11 @@
             var location = window.location;
             var oldHash = location.hash;
             var newHash = location.hash;
+            // Default section (when the hash is empty)
+            if (!oldHash) {
+                oldHash = "#startScreen";
+                newHash = "#startScreen";
+            }
             // default section toggle
             sections.toggle(newHash, oldHash);
             window.onhashchange = function () {
@@ -26,10 +31,6 @@
     // Sections
     var sections = {
         toggle: function (newRoute, oldRoute) {
-            // Default section
-            if (!oldRoute) {
-                newRoute = "#startScreen";
-            }
             // If is empty do not run
             if (oldRoute) {
                 // Remove hash for selector

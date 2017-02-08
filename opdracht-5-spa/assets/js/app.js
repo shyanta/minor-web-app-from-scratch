@@ -15,8 +15,10 @@
             var newHash = location.hash;
             // Default section (when the hash is empty)
             if (!oldHash) {
-                oldHash = "#startScreen";
-                newHash = "#startScreen";
+                var defaultHash = "#startScreen";
+                oldHash = defaultHash;
+                newHash = defaultHash;
+                sections.toggle(newHash, oldHash);
             }
             // default section toggle
             sections.toggle(newHash, oldHash);

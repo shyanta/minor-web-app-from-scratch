@@ -2,6 +2,17 @@
 Zorg er met CSS voor dat de secties netjes responsive gestyled zijn, ga hierbij uit van een single column first (mobile first) strategie
  */
 
+/* Important styling */
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    min-height: 100vh;
+}
+
 main section {
     display: none;
 }
@@ -9,3 +20,63 @@ main section {
 .active {
     display: block;
 }
+
+/* Regular styling */
+nav {
+    background-color: rgba(52, 152, 219,1.0);
+}
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+        nav ul li {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                display: block;
+                padding:1em 0.2em;
+                color: rgba(236, 240, 241,1.0);
+            }
+
+main {
+    margin: 0 auto;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+    main section {
+        padding: 1em;
+        color: rgba(236, 240, 241,1.0);
+    }
+
+        main section .inner {
+            max-width: 30em;
+            margin: 0 auto;
+        }
+
+        main section h1 {
+            margin: 0 0 1em 0;
+        }
+
+        main section#startScreen {
+            background-color: rgba(231, 76, 60,1.0);
+        }
+
+        main section#lists{
+            background-color: rgba(142, 68, 173,1.0);
+        }
+
+        main section#formSection{
+            background-color: rgba(39, 174, 96,1.0);
+        }

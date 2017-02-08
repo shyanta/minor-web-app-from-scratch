@@ -1,4 +1,4 @@
-# minor-wafs
+# minor-web-app-from-scratch
 All assignments for Web App From Scratch
 
 ## Advantage and Disadvantages JavaScript libraries/frameworks research

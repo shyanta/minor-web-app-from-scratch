@@ -7,36 +7,40 @@
             routes.init();
         }
     };
-    
+    // Routes
     var routes = {
         init: function () {
-            var defaultHash = "#startScreen";
-            var oldHash = location.hash;
-            var newHash = location.hash;
+            // Get hashs from url
+            var oldHash = window.location.hash;
+            var newHash = window.location.hash;
             // Default section (when the hash is empty)
-            if (!newHash) {
-                sections.toggle(defaultHash);
-            }else{
-                sections.toggle(newHash)
+            if (!oldHash) {
+                var defaultHash = "#startScreen";
+                oldHash = defaultHash;
+                newHash = defaultHash;
             }
-            
-            // default section toggle
+            // Default section toggle
+            sections.toggle(newHash, oldHash);
+            // On hash change run function
             window.onhashchange = function () {
-                newHash = location.hash;
-                sections.toggle(newHash);
+                newHash = window.location.hash;
+                sections.toggle(newHash, oldHash);
                 // Update hash after toggle
                 oldHash = newHash;
             };
         }
     };
-
+    // Sections
     var sections = {
-        toggle: function (route) {
+        toggle: function (newRoute, oldRoute) {
             // If is empty do not run
-            if (route) {
-                // Remove hash for selector
-                
-                var showSection = document.querySelector(route);
+            if (oldRoute) {
+                var hideSection = document.querySelector(oldRoute);
+                hideSection.classList.remove("active");
+            }
+            // If is empty do not run
+            if (newRoute) {
+                var showSection = document.querySelector(newRoute);
                 showSection.classList.add("active");
             }
         }
@@ -48,5 +52,5 @@
 /*
 Sources:
 - https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
-- Colin Dorr (build it together with him).
+- https://github.com/ColinDorr - Colin Dorr (build it together with him).
  */

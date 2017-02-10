@@ -31,8 +31,7 @@ nav {
         margin: 0;
         padding: 0;
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        flex-flow: row wrap;
     }
 
         nav ul li {
@@ -51,8 +50,7 @@ main {
     margin: 0 auto;
     min-width: 100%;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
 }
 
     main section {

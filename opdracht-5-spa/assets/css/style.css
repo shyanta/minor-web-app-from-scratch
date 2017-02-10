@@ -9,7 +9,7 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: flex-start;
     min-height: 100vh;
 }
 

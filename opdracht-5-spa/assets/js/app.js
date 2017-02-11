@@ -11,38 +11,33 @@
     var routes = {
         init: function () {
             // Get hashs from url
-            var oldHash = window.location.hash;
-            var newHash = window.location.hash;
-            // Default section (when the hash is empty)
-            if (!oldHash) {
-                var defaultHash = "#startScreen";
-                oldHash = defaultHash;
-                newHash = defaultHash;
-            }
+            var route = window.location.hash;
             // Default section toggle
-            sections.toggle(newHash, oldHash);
+            if (!route) {
+                route = "#startScreen";
+            }
+            // Init onload
+            sections.toggle(route);
             // On hash change run function
             window.onhashchange = function () {
-                newHash = window.location.hash;
-                sections.toggle(newHash, oldHash);
-                // Update hash after toggle
-                oldHash = newHash;
+                route = window.location.hash;
+                sections.toggle(route);
             };
         }
     };
     // Sections
     var sections = {
-        toggle: function (newRoute, oldRoute) {
-            // If is empty do not run
-            if (oldRoute) {
-                var hideSection = document.querySelector(oldRoute);
+        toggle: function (route) {
+            // Hide other sections
+            var hideSections = document.getElementsByTagName('section');
+            //ES6 for loop
+            for (var hideSection of hideSections) {
+                // Hide sections
                 hideSection.classList.remove("active");
             }
-            // If is empty do not run
-            if (newRoute) {
-                var showSection = document.querySelector(newRoute);
-                showSection.classList.add("active");
-            }
+            // Show new section
+            var showSection = document.querySelector(route);
+            showSection.classList.add("active");
         }
     };
     // Run app
@@ -53,4 +48,5 @@
 Sources:
 - https://developer.mozilla.org/en-US/docs/Web/Events/hashchange
 - https://github.com/ColinDorr - Colin Dorr (build it together with him).
+- ES6 for loop: http://jsfiddle.net/jfriend00/joy06u4e/
  */

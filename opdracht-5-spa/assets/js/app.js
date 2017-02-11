@@ -3,8 +3,10 @@
     // App defined
     var app = {
         init: function () {
-            // get routers
+            // Get routes on load
             routes.init();
+            // Get routes on hash change
+            window.addEventListener("hashchange", routes.init);
         }
     };
     // Routes
@@ -12,17 +14,12 @@
         init: function () {
             // Get hashs from url
             var route = window.location.hash;
-            // Default section toggle
+            // Default section toggle if hash is empty
             if (!route) {
                 route = "#startScreen";
             }
-            // Init onload
+            // Toggle section
             sections.toggle(route);
-            // On hash change run function
-            window.onhashchange = function () {
-                route = window.location.hash;
-                sections.toggle(route);
-            };
         }
     };
     // Sections
@@ -32,7 +29,7 @@
             var hideSections = document.getElementsByTagName("section");
             //ES6 for loop
             for (var hideSection of hideSections) {
-                // Hide sections
+                // Hide other sections
                 hideSection.classList.remove("active");
             }
             // Show new section
@@ -43,7 +40,6 @@
     // Run app
     app.init();
 }());
-
 /*
 Sources:
 - https://developer.mozilla.org/en-US/docs/Web/Events/hashchange

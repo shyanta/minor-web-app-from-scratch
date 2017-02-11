@@ -29,7 +29,7 @@
     var sections = {
         toggle: function (route) {
             // Hide other sections
-            var hideSections = document.getElementsByTagName('section');
+            var hideSections = document.getElementsByTagName("section");
             //ES6 for loop
             for (var hideSection of hideSections) {
                 // Hide sections

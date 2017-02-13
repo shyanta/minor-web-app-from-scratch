@@ -6,25 +6,26 @@
             // Get routes on load
             routes.init();
             // Get routes on hash change
-            window.addEventListener("hashchange", routes.init);
         }
     };
     // Routes
     var routes = {
         init: function () {
-            // Get hashs from url
+            // Toggle on hashchange
+            window.addEventListener("hashchange", sections.toggle);
+            // Toggle section
+            sections.toggle();
+        }
+    };
+    // Sections
+    var sections = {
+        toggle: function () {
+            // Get hash from url
             var route = window.location.hash;
             // Default section toggle if hash is empty
             if (!route) {
                 route = "#startScreen";
             }
-            // Toggle section
-            sections.toggle(route);
-        }
-    };
-    // Sections
-    var sections = {
-        toggle: function (route) {
             // Hide other sections
             var hideSections = document.getElementsByTagName("section");
             //ES6 for loop

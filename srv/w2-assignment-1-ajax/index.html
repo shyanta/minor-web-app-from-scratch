@@ -3,11 +3,67 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Load currency</title>
+    <title>SPA</title>
 
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+<nav>
+    <ul>
+        <li><a href="#startScreen">Start screen</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#currency">API Currency</a></li>
+        <li><a href="#rents">API Rents</a></li>
+    </ul>
+</nav>
+<main>
+    <section id="startScreen">
+        <div class="inner">
+            <h1>Start screen</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque ante sed commodo maximus. Curabitur at lorem et odio dapibus tincidunt. Morbi congue diam a purus sollicitudin, et hendrerit metus condimentum. Integer maximus leo vel vehicula egestas. In finibus dui lorem, in lobortis quam elementum ac. Nullam massa lacus, tincidunt porta congue at, laoreet sit amet nisl. Fusce et ultrices tellus, sit amet sagittis eros. Aliquam efficitur laoreet nisl, eu euismod nibh molestie eu. Duis ultricies sit amet diam quis rutrum. Morbi dapibus faucibus turpis, vel pellentesque ipsum iaculis in. Maecenas aliquet, est in pretium malesuada, odio dui malesuada massa, ut faucibus orci felis a eros.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque ante sed commodo maximus. Curabitur at lorem et odio dapibus tincidunt. Morbi congue diam a purus sollicitudin, et hendrerit metus condimentum. Integer maximus leo vel vehicula egestas. In finibus dui lorem, in lobortis quam elementum ac. Nullam massa lacus, tincidunt porta congue at, laoreet sit amet nisl. Fusce et ultrices tellus, sit amet sagittis eros. Aliquam efficitur laoreet nisl, eu euismod nibh molestie eu. Duis ultricies sit amet diam quis rutrum. Morbi dapibus faucibus turpis, vel pellentesque ipsum iaculis in. Maecenas aliquet, est in pretium malesuada, odio dui malesuada massa, ut faucibus orci felis a eros.
+            </p>
+        </div>
+    </section>
+    <section id="lists">
+        <div class="inner">
+            <h1>Lists</h1>
+            <ul>
+                <li>Don't use global variables/objects</li>
+                <li>Declare variables at top of scope</li>
+                <li>Use short clear meaningful names (English)</li>
+                <li>Work in strict mode</li>
+                <li>camelCase your code if(code != Constructor || CONSTANTS)</li>
+                <li>Place external scripts at the bottom of the page</li>
+                <li>Indent your code</li>
+            </ul>
+        </div>
+    </section>
+    <section id="currency">
+        <div class="inner">
+            <h1>Currency API</h1>
+            <p>Date: <input type="date" id="datepicker" min="2000-01-01" max="2017-01-13"></p>
+            <ul id="currencies">
+                <li class="currency"></li>
+            </ul>
+        </div>
+    </section>
+    <section id="rents">
+        <div class="inner">
+            <h1>Rents API</h1>
+            <input type="text" id="cityName" value="Amsterdam">
+            <ul id="rentsValues">
+                <li class="rentValue"></li>
+            </ul>
+        </div>
+    </section>
+</main>
+<script src="assets/js/routie.min.js"></script>
+<script src="assets/js/transparency.min.js"></script>
+<script src="assets/js/aja.min.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -78,3 +78,8 @@ main section[id*="currency"] {
 main section[id*="rents"] {
     background-color: #333;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}

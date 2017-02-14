@@ -45,24 +45,42 @@
     <section id="currency">
         <div class="inner">
             <h1>Currency API</h1>
+            <p>All currencies based on EUR:</p>
             <p>Date: <input type="date" id="datepicker" min="2000-01-01" max="2017-01-13"></p>
             <ul id="currencies">
                 <li class="currency"></li>
+            </ul>
+            <div id="reducedData">
+                <div id="innerReduced"></div>
+            </div>
+            <ul id="filteredData">
+                <li class="currencyFilter"></li>
             </ul>
         </div>
     </section>
     <section id="rents">
         <div class="inner">
             <h1>Rents API</h1>
-            <input type="text" id="cityName" value="Amsterdam">
-            <ul id="rentsValues">
-                <li class="rentValue"></li>
-            </ul>
+            <label for="cityName">Naam Stad:</label>
+            <input type="text" id="cityName" value="">
+            <div id="cityRentInfo">
+                <h2 class="name"></h2>
+                <ul>
+                    <li><label>avgPricePerSqm:</label> <span class="avgPricePerSqm"></span></li>
+                    <li><label>latitude:</label> <span class="latitude"></span></li>
+                    <li><label>longitude:</label> <span class="longitude"></span></li>
+                    <li><label>country:</label> <span class="country"></span></li>
+                </ul>
+                <div id="map"></div>
+            </div>
         </div>
     </section>
 </main>
 <script src="assets/js/routie.min.js"></script>
 <script src="assets/js/transparency.min.js"></script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-EuO6w3_7_ETX1wHm3mYZIQkr0SG6jw">
+</script>
 <script src="assets/js/aja.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

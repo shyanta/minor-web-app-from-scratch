@@ -160,13 +160,13 @@
                     // Google maps update
                     var latValue = data[0].latitude;
                     var lngValue = data[0].longitude;
-                    var uluru = {lat: latValue, lng: lngValue};
+                    var locationPoint = {lat: latValue, lng: lngValue};
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 5,
-                        center: uluru
+                        center: locationPoint
                     });
                     var marker = new google.maps.Marker({
-                        position: uluru,
+                        position: locationPoint,
                         map: map
                     });
                 })

@@ -1,4 +1,4 @@
-// (function(){
+(function(){
     "use strict";
     // App defined
     var dataStore;
@@ -122,4 +122,4 @@
     };
     // Run app
     app.init();
-// }());
+ }());

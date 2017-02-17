@@ -67,16 +67,12 @@
                             text: function() {
                                 return this.name;
                             },
-                            value: function() {
-                                return this.name;
-                            },
                             href: function() {
                                 return window.location.href + '/' + this.countryCode.toLowerCase();
                             }
                         }
                     };
                     Transparency.render(document.getElementById("countriesOverview"), countries, country);
-                    Transparency.render(document.getElementById("countriesSearch"), countries, country);
                 })
                 .on('40x', function(response){
                     console.log("Error " + response);
@@ -98,6 +94,7 @@
                     var singleCountry = response.filter(function(value) {
                         return value.alpha3Code == countryLink;
                     });
+                    console.log(singleCountry);
                     Transparency.render(document.getElementById('countryContainer'), singleCountry);
                     // Google maps update
                     var latValue = singleCountry[0].latlng[0];
@@ -125,4 +122,4 @@
     };
     // Run app
     app.init();
-}());
+ }());

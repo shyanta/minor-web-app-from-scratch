@@ -8,11 +8,6 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="#countries">Countries europe</a></li>
-    </ul>
-</nav>
 <main>
     <section id="countries">
         <div class="inner">
@@ -20,12 +15,25 @@
             <p>
                 Alle landen in Europa, kies een land om daar meer informatie over te vinden.
             </p>
+            <form method="post" action="/w2-assignment-1-ajax/v2/">
+                <input type="text" id="autoComplete" list="countriesSearch">
+                <datalist id="countriesSearch">
+                    <option class="country" value=""></option>
+                </datalist>
+                <br>
+                <button type="submit">Search</button>
+            </form>
             <div id="countriesOverview">
                 <a class="country"></a>
             </div>
         </div>
     </section>
     <section id="country">
+        <nav>
+            <ul>
+                <li><a href="#countries">Back to overview</a></li>
+            </ul>
+        </nav>
         <div class="inner">
             <div id="countryContainer">
                 <h1 id="name"></h1>

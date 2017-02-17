@@ -1,7 +1,6 @@
 (function(){
     "use strict";
     // App defined
-    var dataStore;
     var app = {
         init: function () {
             // Get routes on load
@@ -123,6 +122,5 @@
                 .go();
         }
     };
-    // Run app
     app.init();
 }());

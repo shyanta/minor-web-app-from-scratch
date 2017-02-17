@@ -79,10 +79,10 @@
                     Transparency.render(document.getElementById("countriesSearch"), countries, country);
                 })
                 .on('40x', function(response){
-                    console.log("Error " + response);
+
                 })
                 .on('500', function(response){
-                    console.log("Fail " + response);
+
                 })
                 .go();
         },
@@ -115,10 +115,10 @@
 
                 })
                 .on('40x', function(response){
-                    console.log("Error " + response);
+
                 })
                 .on('500', function(response){
-                    console.log("Fail " + response);
+
                 })
                 .go();
         }

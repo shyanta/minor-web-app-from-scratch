@@ -25,6 +25,18 @@
                     <br>
                     <button type="submit">Zoeken</button>
                 </form>
+                <ul id="allClickButtons">
+                    <li>
+                        <label class="region" for="all">All</label>
+                        <input type="radio" class="regionRadio" name="regionGroup" value="all" id="all" checked />
+                    </li>
+                    <div id="filterButtons">
+                        <li>
+                            <label class="region"></label>
+                            <input type="radio" class="regionRadio" name="regionGroup" />
+                        </li>
+                    </div>
+                </ul>
                 <div id="countriesOverview">
                     <a class="country"></a>
                 </div>
@@ -36,6 +48,7 @@
                     <li><a href="#countries">Terug naar overzicht</a></li>
                 </ul>
             </nav>
+
             <div class="inner">
                 <div id="countryContainer">
                     <h1 id="name"></h1>
@@ -45,21 +58,20 @@
                         <li><label>Oppervlakte: </label><span class="area"></span> km2</li>
                         <li><label>Hoofdstad: </label><span class="capital"></span></li>
                         <li><label>Regio: </label><span class="region"></span></li>
-                        <li><label>Sub regio: </label><span class="subregion"></span></li>
                         <li><label>Hoofdtaal: </label><span class="demonym"></span></li>
                     </ul>
                 </div>
             </div>
-            <div id="map"></div>
         </section>
     </div>
 </main>
+<div id="map"></div>
 <script src="assets/js/routie.min.js"></script>
 <script src="assets/js/transparency.min.js"></script>
+<script src="assets/js/aja.min.js"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-EuO6w3_7_ETX1wHm3mYZIQkr0SG6jw">
 </script>
-<script src="assets/js/aja.min.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

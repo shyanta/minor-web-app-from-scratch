@@ -114,6 +114,8 @@ main section h1 {
 main section[id*="countries"] {
     max-width: 100%;
     padding: 1em;
+    background-color: #F4F4F4;
+    min-height: 100vh;
 }
 
 main section[id*="countries"] .inner {
@@ -205,6 +207,7 @@ button:hover,
 button:focus {
     background-color: #5AA6DA;
 }
+
 
 @keyframes spinner-loader {
     0% {

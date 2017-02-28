@@ -17,14 +17,11 @@
                 <p>
                     Alle landen in Europa, kies een land om daar meer informatie over te vinden.
                 </p>
-                <form method="post" action="/w2-assignment-1-ajax/v2/">
-                    <input type="text" id="autoComplete" list="countriesSearch">
-                    <datalist id="countriesSearch">
-                        <option class="country" value=""></option>
-                    </datalist>
-                    <br>
-                    <button type="submit">Zoeken</button>
-                </form>
+
+                <select id="countriesSearch" onchange="window.location.href = window.location.href + '/' + this.value">
+                    <option class="country" value=""></option>
+                </select>
+
                 <label class="filterLabel" for="showFilters">Show/hide filters</label>
                 <input type="checkbox" class="showFilters" value="showFilters" id="showFilters" />
                 <ul id="allClickButtons">

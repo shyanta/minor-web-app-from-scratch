@@ -212,6 +212,28 @@ button:focus {
     background-color: #5AA6DA;
 }
 
+/*select {*/
+    /*color: #003768;*/
+    /*outline: 0 ;*/
+    /*border-radius: 0;*/
+    /*-webkit-appearance: none;*/
+    /*-webkit-border-radius: 0;*/
+    /*display: inline-block;*/
+    /*border: 0;*/
+    /*font-weight: 700;*/
+    /*font-size: 14px;*/
+    /*height: auto;*/
+    /*padding: 10px 45px 10px 20px;*/
+    /*position: relative;*/
+    /*margin-bottom: 15px;*/
+    /*margin-left: 10px;*/
+    /*margin-right: 10px;*/
+    /*min-height: 47px;*/
+    /*vertical-align: bottom;*/
+    /*box-sizing: border-box;*/
+    /*width: 100%;*/
+/*}*/
+
 #countryContainer {
     padding: 1em;
 }

@@ -97,7 +97,7 @@
                         return this.name;
                     },
                     value: function() {
-                        return this.name;
+                        return this.alpha3Code;
                     },
                     href: function() {
                         return window.location.href + "/" + this.alpha3Code;
@@ -111,6 +111,10 @@
             // Select region with the filters
             document.getElementById("allClickButtons").addEventListener("click",function (e) {
                 filters.regionActive(e);
+            });
+
+            document.getElementById("countriesSearch").addEventListener("change",function () {
+                console.log("sds");
             });
         },
         singulairCountries: function () {

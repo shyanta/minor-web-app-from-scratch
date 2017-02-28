@@ -9,9 +9,9 @@
         countries: function () {
             var apiURL = "https://restcountries.eu/rest/v2/all";
             aja()
-                .method('get')
+                .method("get")
                 .url(apiURL)
-                .on('200', function (response) {
+                .on("200", function (response) {
                     dataStore = response;
                     // Start routers
                     routers.listen();
@@ -20,12 +20,10 @@
                     // Fade in response
                     responseContainer.style.opacity = 1;
                 })
-                .on('40x', function (response) {
-                    console.log(response);
+                .on("40x", function () {
                     routers.failed();
                 })
-                .on('500', function (response) {
-                    console.log(response);
+                .on("500", function () {
                     routers.failed();
                 })
                 .go();
@@ -39,7 +37,7 @@
             // If no hash is in the URL add default hash
             if (!route) {
                 route = "#countries";
-                window.location.href  = window.location.href + route
+                window.location.href  = window.location.href + route;
             }
             request.countries();
         }
@@ -49,26 +47,28 @@
         listen: function () {
             // Routers
             routie({
-                'countries': function() {
+                "countries": function() {
                     // Overview of all the countries
                     sections.overviewCountries();
                     // hide not selected sections
                     sections.hide();
                     // Add active to the section that needs te be displayed
                     document.getElementById("countries").classList.add("active");
+                    document.getElementById("map").classList.add("hide");
                 },
-                'countries/:country': function() {
+                "countries/:country": function() {
                     // Overview of single country
                     sections.singulairCountries();
                     // hide not selected sections
                     sections.hide();
                     // Add active to the section that needs te be displayed
                     document.getElementById("country").classList.add("active");
+                    document.getElementById("map").classList.add("show");
                 }
             });
         },
         failed: function () {
-            console.log("fail");
+            return "Fail";
         }
     };
 
@@ -98,7 +98,7 @@
                         return this.name;
                     },
                     href: function() {
-                        return window.location.href + '/' + this.alpha3Code;
+                        return window.location.href + "/" + this.alpha3Code;
                     }
                 }
             };
@@ -114,21 +114,26 @@
         singulairCountries: function () {
             // Get the right country by hash
             var initialPage = window.location.hash;
-            var countryLink = initialPage.split('/')[1];
+            var countryLink = initialPage.split("/")[1];
             // Filter the selected country
             var singleCountry = dataStore.filter(function(value) {
                 return value.alpha3Code == countryLink;
             });
-            Transparency.render(document.getElementById('countryContainer'), singleCountry);
+            Transparency.render(document.getElementById("countryContainer"), singleCountry);
             // Google maps update
             var latValue = singleCountry[0].latlng[0];
             var lngValue = singleCountry[0].latlng[1];
             this.googleMaps(latValue, lngValue);
 
-            var x = singleCountry.reduce(function(object) {
-                return object.region + object.region;
-            }, 'Summery');
-            console.log(x);
+            console.log(singleCountry);
+            var summery = singleCountry.reduce(function(prev, object) {
+                var sum = object.name + " (or native name: " + object.nativeName + ") is a country located on the " + object.region + " continent." + " The surface is: " + object.area + " km\u00B2 for a population of " + object.population + " human beings." + " The capital city is named: " + object.capital;
+
+                return sum;
+            }, ['Alphabet']);
+
+            Transparency.render(document.getElementById("summery"), {inner: summery});
+
         },
         googleMaps: function (lat, lng) {
             // Needed to reload Google Maps, because if the marker updates it needed a redraw.
@@ -137,7 +142,8 @@
                 center: latlng,
                 zoom: 3,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                disableDefaultUI: true
+                disableDefaultUI: true,
+                styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
             };
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
@@ -212,7 +218,7 @@
                             return this.name;
                         },
                         href: function() {
-                            return window.location.href + '/' + this.alpha3Code;
+                            return window.location.href + "/" + this.alpha3Code;
                         }
                     }
                 };

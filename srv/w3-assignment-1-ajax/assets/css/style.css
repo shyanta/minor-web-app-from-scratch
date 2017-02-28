@@ -3,6 +3,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    line-height: 1.4;
 }
 body {
     font-family: Verdana, Geneva, sans-serif;
@@ -62,6 +63,14 @@ main section.active {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 /* Regular styling */
 nav {
     background-color: #5AA6DA;
@@ -103,7 +112,7 @@ main section {
 main section .inner {
     max-width: 30em;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 main section h1 {
@@ -125,6 +134,7 @@ main section[id*="countries"] .inner {
 main section[id*="country"] {
     position: relative;
     text-align: left;
+    margin-bottom: 1em;
 }
 
 #countriesOverview {
@@ -161,27 +171,20 @@ main section[id*="country"] .inner label {
 }
 
 #map {
-    min-height: 100vh;
-    min-width: 100vh;
-    padding: 0;
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom: 0;
-    z-index: -1;
+   min-height: 400px;
+    max-width: 100%;
 }
 
-#map::before {
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom: 0;
-    background-color: rgba(255,255,255, 0.8);
-    z-index: 1;
-}
+/*#map::before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top:0;*/
+    /*left:0;*/
+    /*right:0;*/
+    /*bottom: 0;*/
+    /*background-color: rgba(255,255,255, 0.8);*/
+    /*z-index: 1;*/
+/*}*/
 
 #autoComplete {
     width: 100%;
@@ -207,7 +210,6 @@ button:hover,
 button:focus {
     background-color: #5AA6DA;
 }
-
 
 @keyframes spinner-loader {
     0% {

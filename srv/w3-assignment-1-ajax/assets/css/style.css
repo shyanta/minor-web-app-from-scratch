@@ -11,8 +11,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
-    background-color: #F4F4F4;
-    color: #28292D;
+    background-color: rgb(67, 72, 76);
+    color: rgb(235, 237, 238);
 }
 
 main {
@@ -57,6 +57,7 @@ main #response {
 
 main section {
     display: none;
+    padding: 0;
 }
 
 main section.active {
@@ -64,16 +65,18 @@ main section.active {
 }
 
 .hide {
-    display: none;
+    display: block;
+    opacity: 0;
 }
 
 .show {
     display: block;
+    opacity: 1;
 }
 
 /* Regular styling */
 nav {
-    background-color: #5AA6DA;
+    background-color: rgb(232, 80, 49);
     display: inline-block;
 }
 
@@ -102,11 +105,6 @@ main {
     min-width: 100%;
     display: flex;
     flex-flow: column wrap;
-}
-
-main section {
-    padding: 0;
-    color: #28292D;
 }
 
 main section .inner {
@@ -143,16 +141,18 @@ main section[id*="country"] {
 #countriesOverview .country {
     display: inline-block;
     padding: 0.5em;
-    text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
+    color: rgb(67, 72, 76);
+    width: 100%;
+    text-align: center;
 }
 
 #countriesOverview .country:nth-child(odd) {
-     color: #5BD6D3;
+    color: rgb(67, 72, 76);
  }
 #countriesOverview .country:nth-child(even) {
-    color: #F97E07;
+    color: rgb(249, 92, 60);
 }
 
 
@@ -163,7 +163,7 @@ main section[id*="country"] .inner ul {
 }
 
 main section[id*="country"] .inner li {
-    margin: 1em 0;
+    margin: .5em 0;
 }
 
 main section[id*="country"] .inner label {
@@ -171,7 +171,7 @@ main section[id*="country"] .inner label {
 }
 
 #map {
-   min-height: 400px;
+    min-height: 25em;
     max-width: 100%;
 }
 
@@ -192,6 +192,7 @@ main section[id*="country"] .inner label {
     min-height: 2em;
     font-size: 1em;
     padding: 0 1em;
+    box-sizing: border-box;
 }
 
 button {
@@ -209,6 +210,75 @@ button {
 button:hover,
 button:focus {
     background-color: #5AA6DA;
+}
+
+#countryContainer {
+    padding: 1em;
+}
+
+.filterLabel {
+    display: block;
+    padding: 1em 2em;
+    background-color: rgba(249, 92, 60, 0.8);
+    border: .15em solid rgba(249, 92, 60, 0.8);
+    border-radius: .4em;
+    margin: 0.8em auto;
+    color: rgb(255, 248, 246);
+    transition: background-color .5s ease;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1em;
+    max-width: 20em;
+}
+
+#showFilters:checked + #allClickButtons {
+    display: block;
+}
+
+#allClickButtons {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    color: #28292D;
+    max-width: 20em;
+    display: none;
+}
+
+#allClickButtons li label {
+    display: block;
+    padding: 1em 2em;
+    background-color: rgb(249, 92, 60);
+    border: .15em solid rgb(249, 92, 60);
+    border-radius: .4em;
+    margin: 0.8em 0;
+    color: rgb(255, 248, 246);
+    transition: all .5s ease;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .1em;
+}
+
+#allClickButtons li label:hover,
+.filterLabel:hover {
+    background-color: rgb(232, 80, 49);
+    border: .15em solid rgb(232, 80, 49);
+}
+
+#allClickButtons li input:checked + label {
+    background-color: transparent;
+    border: .15em solid rgb(249, 92, 60);
+    color: rgb(249, 92, 60);
+}
+
+input[type='radio'],
+input[type='checkbox']{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    margin: 0 .5em 0 0;
 }
 
 @keyframes spinner-loader {

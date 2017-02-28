@@ -55,6 +55,7 @@
                     // Add active to the section that needs te be displayed
                     document.getElementById("countries").classList.add("active");
                     document.getElementById("map").classList.add("hide");
+                    document.getElementById("map").classList.remove("show");
                 },
                 "countries/:country": function() {
                     // Overview of single country
@@ -64,6 +65,7 @@
                     // Add active to the section that needs te be displayed
                     document.getElementById("country").classList.add("active");
                     document.getElementById("map").classList.add("show");
+                    document.getElementById("map").classList.remove("hide");
                 }
             });
         },

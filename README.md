@@ -6,6 +6,10 @@ All assignments for Web App From Scratch
 - https://timoverkroost.github.io/minor-web-app-from-scratch/srv/w2-assignment-1-ajax/ (1 API isn't over HTTPS so it won't load on a HTTPS connection right top in Chrome you can select load anyway so do that for the full view)
 - https://timoverkroost.github.io/minor-web-app-from-scratch/srv/w2-assignment-1-ajax/v2/
 
+### Final assignment
+- Repo link: https://github.com/TimoVerkroost/minor-web-app-from-scratch/tree/master/srv/w3-assignment-1-ajax
+    - Live demo: https://timoverkroost.github.io/minor-web-app-from-scratch/srv/w3-assignment-1-ajax/
+
 ## Advantage and Disadvantages JavaScript libraries/frameworks research
 
 ### Advantage:

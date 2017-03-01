@@ -12,9 +12,7 @@ When you landed on the page you can filter (on continent), select or just click 
 Download the assets folder and place this in the project of your choice. Then import the modules in the your HTML file like this:
 
 ```html
-
-<!-- YOUR HTML -->
-
+<!-- HTML -->
     <script src="assets/js/routie.min.js"></script>
     <script src="assets/js/transparency.min.js"></script>
     <script src="assets/js/aja.min.js"></script>
@@ -29,7 +27,7 @@ Download the assets folder and place this in the project of your choice. Then im
 ```
 Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 
-### You need some ID's to get it to work use this as example:
+### You need some selectors to get it to work use this as example:
 
 #### To load the response of the API Call
 
@@ -144,7 +142,7 @@ The application is mostly build with native JavaScript only 2 micro libraries ar
 - Country flags.
 - More detailed information about the countries.
 - Load all modules in one JS file and not the HTML file.
-- Make selectors in JS flexible for the user, most of them are hardcoded now
+- Make selectors in JS flexible for the user, most of them are hardcoded.
 
 ## Live demo
 - https://timoverkroost.github.io/minor-web-app-from-scratch/srv/w3-assignment-1-ajax/

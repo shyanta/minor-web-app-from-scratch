@@ -248,7 +248,7 @@
             option.setAttribute("selected", "selected");
             option.setAttribute("disabled", "disabled");
             // add Default selected item to dropdown only when not exist
-            var defaultSelected =  document.getElementById('defaultSelected');
+            var defaultSelected =  document.getElementById("defaultSelected");
             if (defaultSelected) {
                 defaultSelected.remove();
                 countryDropdown.add(option, countryDropdown[0]);

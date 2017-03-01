@@ -13,38 +13,45 @@
     <div id="response">
         <section id="countries">
             <div class="inner">
-                <h1>Europa</h1>
+                <h1>Country finder</h1>
                 <p>
-                    Alle landen in Europa, kies een land om daar meer informatie over te vinden.
+                    Search for every country in the world, find where the country is located and learn some basic knowledge.
                 </p>
-
-                <select id="countriesSearch" onchange="window.location.href = window.location.href + '/' + this.value">
-                    <option class="country" value=""></option>
-                </select>
-
-                <label class="filterLabel" for="showFilters">Show/hide filters</label>
-                <input type="checkbox" class="showFilters" value="showFilters" id="showFilters" />
-                <ul id="allClickButtons">
-                    <li>
-                        <input type="radio" class="regionRadio" name="regionGroup" value="all" id="all" checked />
-                        <label class="region" for="all">All</label>
-                    </li>
-                    <div id="filterButtons">
+                <section id="filters">
+                    <h3>Filter by continent:</h3>
+                    <label class="filterLabel" for="showFilters">Show/hide filters</label>
+                    <input type="checkbox" class="showFilters" value="showFilters" id="showFilters" />
+                    <ul id="allClickButtons">
                         <li>
-                            <input type="radio" class="regionRadio" name="regionGroup" />
-                            <label class="region"></label>
+                            <input type="radio" class="regionRadio" name="regionGroup" value="all" id="all" checked />
+                            <label class="region" for="all">All</label>
                         </li>
+                        <div id="filterButtons">
+                            <li>
+                                <input type="radio" class="regionRadio" name="regionGroup" />
+                                <label class="region"></label>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Select a country from the list:</h3>
+                    <select id="countriesSearch">
+                        <option class="country" value=""></option>
+                    </select>
+                </section>
+                <section>
+                    <h3>List of the filtered countries:</h3>
+                    <div id="countriesOverview">
+                        <a class="country"></a>
                     </div>
-                </ul>
-                <div id="countriesOverview">
-                    <a class="country"></a>
-                </div>
+                </section>
             </div>
         </section>
         <section id="country">
             <nav>
                 <ul>
-                    <li><a href="#countries">Terug naar overzicht</a></li>
+                    <li><a href="#countries">Back to overview</a></li>
                 </ul>
             </nav>
 
@@ -72,12 +79,16 @@
     </div>
 </main>
 <div id="map"></div>
+<section id="failed" class="hide">
+    <h2>Failed to load the content, please try to load the page again.</h2>
+</section>
 <script src="assets/js/routie.min.js"></script>
 <script src="assets/js/transparency.min.js"></script>
 <script src="assets/js/aja.min.js"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-EuO6w3_7_ETX1wHm3mYZIQkr0SG6jw">
 </script>
+<script src="assets/js/maps.config.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

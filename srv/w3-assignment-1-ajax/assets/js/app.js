@@ -21,10 +21,14 @@
                     responseContainer.style.opacity = 1;
                 })
                 .on("40x", function () {
+                    // Error message for user
                     routers.failed();
+                    loader.remove();
                 })
                 .on("500", function () {
+                    // Error message for user
                     routers.failed();
+                    loader.remove();
                 })
                 .go();
         }
@@ -48,29 +52,35 @@
             // Routers
             routie({
                 "countries": function() {
+                    // Hide Google Maps on overview
+                    document.getElementById("map").classList.add("hide");
+                    document.getElementById("map").classList.remove("show");
                     // Overview of all the countries
                     sections.overviewCountries();
                     // hide not selected sections
                     sections.hide();
                     // Add active to the section that needs te be displayed
                     document.getElementById("countries").classList.add("active");
-                    document.getElementById("map").classList.add("hide");
-                    document.getElementById("map").classList.remove("show");
+                    filterRegion.select();
                 },
                 "countries/:country": function() {
+                    // Show Google Maps on single
+                    document.getElementById("map").classList.add("show");
+                    document.getElementById("map").classList.remove("hide");
                     // Overview of single country
                     sections.singulairCountries();
                     // hide not selected sections
                     sections.hide();
                     // Add active to the section that needs te be displayed
                     document.getElementById("country").classList.add("active");
-                    document.getElementById("map").classList.add("show");
-                    document.getElementById("map").classList.remove("hide");
                 }
             });
         },
         failed: function () {
-            return "Fail";
+            document.getElementById("map").classList.add("hide");
+            document.getElementById("map").classList.remove("show");
+            document.getElementById("failed").classList.add("show");
+            document.getElementById("failed").classList.remove("hide");
         }
     };
 
@@ -86,7 +96,7 @@
             }
         },
         overviewCountries: function () {
-            filters.regionCountryButtons();
+            filterRegion.buttons();
             // Default render with all regions
             var filteredRegion = dataStore;
 
@@ -107,14 +117,11 @@
             // Render HTML
             Transparency.render(document.getElementById("countriesOverview"), filteredRegion, countrySingle);
             Transparency.render(document.getElementById("countriesSearch"), filteredRegion, countrySingle);
-
             // Select region with the filters
             document.getElementById("allClickButtons").addEventListener("click",function (e) {
-                filters.regionActive(e);
-            });
-
-            document.getElementById("countriesSearch").addEventListener("change",function () {
-                console.log("sds");
+                filterRegion.select();
+                filterRegion.active(e);
+                document.getElementById("showFilters").checked = false;
             });
         },
         singulairCountries: function () {
@@ -131,12 +138,11 @@
             var lngValue = singleCountry[0].latlng[1];
             this.googleMaps(latValue, lngValue);
 
-            console.log(singleCountry);
-            var summery = singleCountry.reduce(function(prev, object) {
-                var sum = object.name + " (or native name: " + object.nativeName + ") is a country located on the " + object.region + " continent." + " The surface is: " + object.area + " km\u00B2 for a population of " + object.population + " human beings." + " The capital city is named: " + object.capital;
+            var summery = singleCountry.reduce(function(buffer, object) {
+                var summeryString = object.name + " (or native name: " + object.nativeName + ") is a country located on the " + object.region + " continent." + " The surface is: " + object.area + " km\u00B2 for a population of " + object.population + " human beings." + " The capital city is named: " + object.capital;
 
-                return sum;
-            }, ['Alphabet']);
+                return summeryString;
+            }, "");
 
             Transparency.render(document.getElementById("summery"), {inner: summery});
 
@@ -149,7 +155,7 @@
                 zoom: 3,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true,
-                styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+                styles: mapsConfig
             };
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
@@ -160,8 +166,8 @@
         }
     };
 
-    var filters = {
-        regionCountryButtons: function () {
+    var filterRegion = {
+        buttons: function () {
             var regions = dataStore.map(function(objectItem) {
                 return { region: objectItem.region };
             });
@@ -201,7 +207,7 @@
             // Render HTML
             Transparency.render(document.getElementById("filterButtons"), regionOutput, filterButtons);
         },
-        regionActive: function (e) {
+        active: function (e) {
             if (e.target && e.target.matches(".regionRadio")) {
                 // Filter on region
 
@@ -221,7 +227,7 @@
                             return this.name;
                         },
                         value: function() {
-                            return this.name;
+                            return this.alpha3Code;
                         },
                         href: function() {
                             return window.location.href + "/" + this.alpha3Code;
@@ -232,6 +238,29 @@
                 Transparency.render(document.getElementById("countriesOverview"), filteredRegion, countrySingle);
                 Transparency.render(document.getElementById("countriesSearch"), filteredRegion, countrySingle);
             }
+        },
+        select: function () {
+            // Default selected item in dropdown after loaded countries
+            var countryDropdown = document.getElementById("countriesSearch");
+            var option = document.createElement("option");
+            option.text = "Select a country..";
+            option.setAttribute("id", "defaultSelected");
+            option.setAttribute("selected", "selected");
+            option.setAttribute("disabled", "disabled");
+            // add Default selected item to dropdown only when not exist
+            var defaultSelected =  document.getElementById('defaultSelected');
+            if (defaultSelected) {
+                defaultSelected.remove();
+                countryDropdown.add(option, countryDropdown[0]);
+            } else {
+                countryDropdown.add(option, countryDropdown[0]);
+            }
+            // Go to selected country
+            document.getElementById("countriesSearch").addEventListener("change",function () {
+                if (this.value) {
+                    window.location.href = "#countries/" + this.value;
+                }
+            });
         }
     };
 

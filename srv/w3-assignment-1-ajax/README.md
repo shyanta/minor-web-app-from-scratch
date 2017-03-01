@@ -1,6 +1,5 @@
 # Country finder
 
-## Introduction
 With the country finder you can find every country in the world, where it is located and some basic knowledge is provided. You can filter by continent or just scroll down the list of all countries the choice is yours.
 
 ## Why does this application have a purpose?
@@ -122,6 +121,9 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
     </div>
 </article>
 ```
+
+## Flow digram
+![alt text](https://github.com/TimoVerkroost/minor-web-app-from-scratch/blob/master/srv/w3-assignment-1-ajax/assets/images/flow-diagram-webapp.png "FLow diagram")
 
 ## Resources
 The application is mostly build with native JavaScript only 2 micro libraries are added. beside the JavaScript, the application gets it's information from an external API.

@@ -122,8 +122,11 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 </article>
 ```
 
-## Flow digram
-![alt text](https://github.com/TimoVerkroost/minor-web-app-from-scratch/blob/master/srv/w3-assignment-1-ajax/assets/images/flow-diagram-webapp.png "FLow diagram")
+## Flow diagram
+![alt text](https://github.com/TimoVerkroost/minor-web-app-from-scratch/blob/master/srv/w3-assignment-1-ajax/assets/images/flow-diagram-webapp.png "Flow diagram")
+
+## Interaction diagram
+![alt text](https://github.com/TimoVerkroost/minor-web-app-from-scratch/blob/master/srv/w3-assignment-1-ajax/assets/images/interaction-diagram-webapp.png "Interaction diagram")
 
 ## Resources
 The application is mostly build with native JavaScript only 2 micro libraries are added. beside the JavaScript, the application gets it's information from an external API.

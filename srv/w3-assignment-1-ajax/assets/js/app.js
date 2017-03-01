@@ -270,8 +270,11 @@
             // Create default option
             var option = document.createElement("option");
             option.text = "Select a country..";
+            // Set ID
             option.setAttribute("id", "defaultSelected");
+            // Set as selected item
             option.setAttribute("selected", "selected");
+            // Set as disabled so it can't be selected by the user
             option.setAttribute("disabled", "disabled");
             // add Default selected item to dropdown only when not exist
             var defaultSelected =  document.getElementById("defaultSelected");

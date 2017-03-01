@@ -2,12 +2,12 @@
     "use strict";
     // Store API data
     var dataStore = null;
-    var loader = document.getElementById("loader");
-    var responseContainer = document.getElementById("response");
 
     var request = {
         countries: function () {
             var apiURL = "https://restcountries.eu/rest/v2/all";
+            var loader = document.getElementById("loader");
+            var responseContainer = document.getElementById("response");
             aja()
                 .method("get")
                 .url(apiURL)
@@ -265,20 +265,5 @@
     };
 
     app.init();
-
-    /* STRUCTURE
-    Ajax load countries API
-        Load Overview
-            (Optinal: load continents)
-            Map countries
-            Filter on Continent
-        Load autocomplete countries
-        Click on country
-            Filter to the selected country
-            Load Google maps for country
-            Reduce summery
-
-    Ajax load Google Maps
-    */
 
 }());

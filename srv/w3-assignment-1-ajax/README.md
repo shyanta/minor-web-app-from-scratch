@@ -30,6 +30,8 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ### You need some selectors to get it to work use this as example:
 
 #### To load the response of the API Call
+- id="loader" to place the loading indicator.
+- id="response" where the country data will be rendered.
 
 ```html
 <div id="loader"><span>Loading...</span></div>
@@ -42,6 +44,9 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### If the response failed use this
+- id="failed" when the API gives no data.
+- class="hide" hide by default (need to style in CSS).
+
 ```html
 <section id="failed" class="hide">
     <h2>Failed to load the content, please try to load the page again.</h2>
@@ -49,6 +54,8 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### Countries overview selector
+- id="countries" to indicate the container where the countries will be rendered.
+
 ```html
 <section id="countries">
     <!-- HTML -->
@@ -56,26 +63,31 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### Overview filter
+- id="showFilters" to show the continent filters.
+- id="allClickButtons" where continents will be rendered.
+- class="regionRadio" where every single continent will be rendered.
+
 ```html
-<section id="filters">
-    <label class="filterLabel" for="showFilters">Show/hide filters</label>
-    <input type="checkbox" class="showFilters" value="showFilters" id="showFilters" />
-    <ul id="allClickButtons">
+<label class="filterLabel" for="showFilters">Show/hide filters</label>
+<input type="checkbox" class="showFilters" value="showFilters" id="showFilters" />
+<ul id="allClickButtons">
+    <li>
+        <input type="radio" class="regionRadio" name="regionGroup" value="all" id="all" checked />
+        <label class="region" for="all">All</label>
+    </li>
+    <div id="filterButtons">
         <li>
-            <input type="radio" class="regionRadio" name="regionGroup" value="all" id="all" checked />
-            <label class="region" for="all">All</label>
+            <input type="radio" class="regionRadio" name="regionGroup" />
+            <label class="region"></label>
         </li>
-        <div id="filterButtons">
-            <li>
-                <input type="radio" class="regionRadio" name="regionGroup" />
-                <label class="region"></label>
-            </li>
-        </div>
-    </ul>
-</section>
+    </div>
+</ul>
 ```
 
 #### Countries dropdown select option
+- id="countriesSearch" the container of the dropdown for all the country names.
+- class="country" where every single country will be rendered.
+
 ```html
 <select id="countriesSearch">
     <option class="country" value=""></option>
@@ -83,6 +95,9 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### List all countries on the page
+- id="countriesOverview" the container for the list of countries.
+- class="country" where every single country will be rendered.
+
 ```html
 <div id="countriesOverview">
     <a class="country"></a>
@@ -90,6 +105,8 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### Country singulair selector
+- id="country" to indicate the container where the singulair country will be rendered.
+
 ```html
 <section id="country">
     <!-- HTML -->
@@ -97,6 +114,15 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### Country singulair information
+- id="name" rendered the country name.
+- id="listInfoCountry" indicate the detail information container for the selected country.
+- class="alpha3Code" where the alpha3Code will be rendered.
+- class="population" where the population will be rendered.
+- class="area" where the surface will be rendered.
+- class="capital" where the capital city will be rendered.
+- class="region" where the continent will be rendered.
+- class="demonym" where the main language will be rendered.
+
 ```html
 <h1 id="name"></h1>
 <div id="listInfoCountry">
@@ -112,6 +138,9 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 ```
 
 #### Country singulair summery
+- id="summery" indicate the summery container for the selected country.
+- class="inner" where the summery will be rendered.
+
 ```html
 <article id="summery">
     <h2>Summary:</h2>

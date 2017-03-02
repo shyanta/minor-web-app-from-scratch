@@ -17,6 +17,7 @@ var sections = (function () {
         hide: function () {
             // Hide other sections
             hidden = document.getElementsByTagName("section");
+            // Loop in all sections
             for (i = 0; i < hidden.length; i++) {
                 // Hide other sections
                 hidden[i].classList.remove("active");
@@ -57,6 +58,8 @@ var sections = (function () {
             });
         },
         singulairCountries: function () {
+            // Back to top of window
+            window.scrollTo(0, 0);
             // Get the right country by hash
             initialPage = window.location.hash;
             countryLink = initialPage.split("/")[1];

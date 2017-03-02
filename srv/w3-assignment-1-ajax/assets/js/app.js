@@ -102,10 +102,10 @@
         hide: function () {
             // Hide other sections
             var hidden = document.getElementsByTagName("section");
-            //ES6 for loop
-            for (var hide of hidden) {
+            // Loop in all sections
+            for (var i = 0; i < hidden.length; i++) {
                 // Hide other sections
-                hide.classList.remove("active");
+                hidden[i].classList.remove("active");
             }
         },
         overviewCountries: function () {
@@ -143,6 +143,8 @@
             });
         },
         singulairCountries: function () {
+            // Back to top of window
+            window.scrollTo(0, 0);
             // Get the right country by hash
             var initialPage = window.location.hash;
             var countryLink = initialPage.split("/")[1];

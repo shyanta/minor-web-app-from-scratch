@@ -157,14 +157,10 @@ Note: For Google Maps you need to place an API key instead of "YOURAPICODE".
 
 ## Resources
 The application is mostly build with native JavaScript only 2 micro libraries are added. beside the JavaScript, the application gets it's information from an external API.
-- Aja JS: to handle the AJAX calls
-    -  http://krampstudio.com/aja.js/
-- TransparencyJS: to template the JSON loaded files from the AJAX call to the HTML.
-    - https://github.com/leonidas/transparency
-- REST Countries API: to load the country information.
-    - https://restcountries.eu/
-- Google Maps API: to show where the country is located
-    - https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+- [Aja.js](http://krampstudio.com/aja.js/) - To handle the AJAX calls
+- [TransparencyJS](https://github.com/leonidas/transparency) - To template the JSON loaded files from the AJAX call to the HTML.
+- [REST Countries API](https://restcountries.eu/) - To load the country information.
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/adding-a-google-map) - To show where the country is located
 
 ## Wishlist
 - Dropdown searchbar so the user doesn't have to scroll down the whole dropdown.

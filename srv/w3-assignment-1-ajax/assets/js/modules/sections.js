@@ -1,7 +1,7 @@
 // Sections
 var sections = (function () {
     var hidden,
-        hide,
+        i,
         countrySingle,
         initialPage,
         countryLink,
@@ -17,10 +17,9 @@ var sections = (function () {
         hide: function () {
             // Hide other sections
             hidden = document.getElementsByTagName("section");
-            //ES6 for loop
-            for (hide of hidden) {
+            for (i = 0; i < hidden.length; i++) {
                 // Hide other sections
-                hide.classList.remove("active");
+                hidden[i].classList.remove("active");
             }
         },
         overviewCountries: function () {

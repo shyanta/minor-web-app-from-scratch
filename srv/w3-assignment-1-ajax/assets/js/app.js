@@ -35,6 +35,8 @@
                     .url(apiURL)
                     .on("200", function (response) {
                         // Store response data in global variable dataStore
+                    
+                        //Shyanta: Is this the same statement as the one above? Try to keep your code as clean as possible
                         if (typeof(Storage) !== "undefined") {
                             // If the browser does does support localStorage
                             // Store data in localStorage for better performance.
@@ -124,6 +126,7 @@
         hide: function () {
             // Hide other sections
             var hidden = document.getElementsByTagName("section");
+            // Shyanta: Maybe you can place this in a forEach?
             // Loop in all sections
             for (var i = 0; i < hidden.length; i++) {
                 // Hide other sections
